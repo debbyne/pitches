@@ -1,6 +1,8 @@
 import os
 class Config:
      SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:Access@localhost/pitches'
+     SIMPLEMDE_JS_IIFE = True
+     SIMPLEMDE_USE_CDN = True
      @staticmethod
      def init_app(app):
         pass
