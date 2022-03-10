@@ -6,3 +6,9 @@ from .. import  photos, db
 from sqlalchemy import desc
 from ..models import User
 
+@main.route('/')
+def index():
+
+    '''
+    View root page function that returns the index page and its data
+    '''
