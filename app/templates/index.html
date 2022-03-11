@@ -9,6 +9,7 @@
 {% endblock %}
 {% block content %}
 <body>
+    <div class="overlay">
    <div class="pickup">
     <h4>Pick Up Lines</h4>
     {{macro.displaypitches(pick_up_lines)}}
@@ -22,12 +23,12 @@
     {{macro.displaypitches(product_pitch)}}
 
    </div>
-    
+</div>
  </body>
   <style>
       *{
     font-family: 'Supermercado One', cursive;
-    font-size: 18px;
+    font-size: 25px;
     color: white;
     
     } 
@@ -36,6 +37,10 @@
      background-position: center; 
      background-size: cover;
        background-repeat: no-repeat; 
+    }
+    .overlay{
+        background: rgb(0, 0, 0, .5);
+    
     }
   </style>
  {% endblock %}
