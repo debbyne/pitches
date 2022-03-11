@@ -1,28 +1,14 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
-{%block styles%}
-{{super()}}
-<link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
-{% endblock %}
-{% block content %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-<body>
-    <h4>Pick Up Lines</h4>
-    {{macro.displaypitches(pick_up_lines)}}
-    <h4>Interview Pitches</h4>
-    {{macro.displaypitches(interview_pitch)}}
-    <h4>Product Pitches</h4>
-    {{macro.displaypitches(product_pitch)}}
- </body>
- <style>
-     *{
-    font-family: 'Supermercado One', cursive;
-    /* background-image: url("./static/images/nature3.jpeg");
-    background-position: center; 
-    background-size: cover;
-    background-repeat: no-repeat; */
-}
- </style>
- {% endblock %}
- 
- 
+{% block content %}
+ {% for pitch in pitches %}
+ {{pitch.pitch}} <br>
+ {% if current_user.is_authenticated %}
+ {{wtf.quick_form(CommentForm)}}
+ {% endif %}
+{% endfor %}
+
+
+{% endblock %}
