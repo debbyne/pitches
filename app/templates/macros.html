@@ -1,0 +1,10 @@
+
+{% macro displaypitches(pitches_list)%}
+{% import 'bootstrap/wtf.html' as  wtf %}
+{% for pitch in pitches_list %}
+{{pitch.title }} <br>
+{{pitch.pitch}} <br>
+{{pitch.posted}} 
+
+{% endfor %}
+{% endmacro %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+ {% for pitch in pitches %}
+ {{pitch.pitch}}
+{% if current_user._authenticated %}
+{{wtf.quick_form(CommentForm)}}
+{% endif %}
+{% endfor %}
+{% endblock %}

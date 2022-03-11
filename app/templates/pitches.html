@@ -1,10 +1,6 @@
-{% extends 'index.html' %} {% import "bootstrap/wtf.html" as wtf %} {% block
-    pitches %} {{ super() }} {% if current_user.is_authenticated %}
+{% extends 'index.html' %} {% import "bootstrap/wtf.html" as wtf %} 
+{% block content%}
     <div class="new-pitch p-3">
-        <div class="current-user-pic">
-            <img src="{{url_for('static', filename=current_user.profile_pic_path)}}" />
-        </div>
         <div class="new">{{ wtf.quick_form(form) }}</div>
     </div>
-    {% endif %} {% if pitches %}
  {% endblock %}
