@@ -9,7 +9,9 @@ from .. import  photos, db
 from sqlalchemy import desc
 from ..models import Comment, User,Pitch
 
-@main.route('/',methods = ['GET', 'POST'])
+
+
+@main.route('/')
 def index():
 
     '''
@@ -66,8 +68,7 @@ def newpitch():
         
     return render_template('pitches.html', form=form)
 
-
-@main.route('/pitch/')
+@main.route('/allpitches/', methods = ['GET' ,'POST'])
 def allpitches():
     pitches = Pitch.query.all()
     user = User.query.filter_by(id = Pitch.user_id).first()
@@ -79,4 +80,5 @@ def allpitches():
         new_comment.save_comment()
 
     return render_template('allpitches.html' , pitches = pitches , CommentForm = form)
+
 

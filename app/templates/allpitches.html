@@ -3,12 +3,37 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
- {% for pitch in pitches %}
- {{pitch.pitch}} <br>
- {% if current_user.is_authenticated %}
- {{wtf.quick_form(CommentForm)}}
- {% endif %}
-{% endfor %}
+<div class="row">
+    <div class="col">
 
+    </div>
+    <div class="col-md-6">
+        {% for pitch in pitches %}
+<div class="card">
+    <div class="card-header">
+{{pitch.title}}
+    </div>
+    <div class="card-body">
+        
+        {{pitch.pitch}} <br>
+      
+    </div>
+    <div class="card-footer">
+        {% if current_user.is_authenticated %}
+        {{wtf.quick_form(CommentForm)}}
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+    </div>
+    <div class="col">
+
+    </div>
+</div>
+<style>
+    .card{
+        background-color: blueviolet;
+    }
+</style>
 
 {% endblock %}

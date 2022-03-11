@@ -1,32 +1,39 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
+
+
 {%block styles%}
 {{super()}}
+
 <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
-
 <body>
+   <div class="pickup">
     <h4>Pick Up Lines</h4>
     {{macro.displaypitches(pick_up_lines)}}
-    <h4>Interview Pitches</h4>
-    {{macro.displaypitches(interview_pitch)}}
+   </div>
+    <div class="interview">
+        <h4>Interview Pitches</h4>
+        {{macro.displaypitches(interview_pitch)}}
+    </div>
+   <div class="product_p">
     <h4>Product Pitches</h4>
     {{macro.displaypitches(product_pitch)}}
+
+   </div>
+    
  </body>
- <style>
-     *{
+  <style>
+      *{
     font-family: 'Supermercado One', cursive;
-   
-    /* background-image: url("./static/images/nature3.jpeg");
-    background-position: center; 
-    background-size: cover;
-    background-repeat: no-repeat; */
-}
-.body{
-    border: 2px solid red ;
-}
- </style>
+      border: 1 px solid red;
+    
+       /* background-image: url("./static/images/nature3.jpeg");
+       background-position: center; 
+       background-size: cover;
+       background-repeat: no-repeat; */
+    } 
+  </style>
  {% endblock %}
- 
  

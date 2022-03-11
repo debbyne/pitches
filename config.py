@@ -1,6 +1,5 @@
 import os
 class Config:
-     SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:Access@localhost/pitches'
      SQLALCHEMY_TRACK_MODIFICATIONS = False
      UPLOADED_PHOTOS_DEST = 'app/static/image'
      MAIL_SERVER = 'smtp.googlemail.com'
@@ -8,6 +7,7 @@ class Config:
      MAIL_USE_TLS = True
      MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
      MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    
      SECRET_KEY = '56'
 
 
@@ -17,7 +17,7 @@ class Config:
 
 
 class ProdConfig(Config):
-    pass
+     SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
 
 
 class DevConfig(Config):
