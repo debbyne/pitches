@@ -71,12 +71,13 @@ def newpitch():
 @main.route('/allpitches/', methods = ['GET' ,'POST'])
 def allpitches():
     pitches = Pitch.query.all()
+    pitch = Pitch.query.filter_by(id = Pitch.id).first()
     user = User.query.filter_by(id = Pitch.user_id).first()
     form = CommentForm()
     if form.validate_on_submit():
         comment = form.comment.data
 
-        new_comment = Comment(comment= comment , user = current_user, pitch_id = Pitch.pitches.id)
+        new_comment = Comment(comment= comment , user = current_user, pitch_id = pitch)
         new_comment.save_comment()
 
     return render_template('allpitches.html' , pitches = pitches , CommentForm = form)
