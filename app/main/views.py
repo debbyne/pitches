@@ -76,7 +76,7 @@ def allpitches():
     if form.validate_on_submit():
         comment = form.comment.data
 
-        new_comment = Comment(comment= comment , user = current_user, pitch_id = pitches.id)
+        new_comment = Comment(comment= comment , user = current_user, pitch_id = Pitch.pitches.id)
         new_comment.save_comment()
 
     return render_template('allpitches.html' , pitches = pitches , CommentForm = form)
