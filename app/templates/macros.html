@@ -2,11 +2,7 @@
 {% macro displaypitches(pitches_list)%}
 {% import 'bootstrap/wtf.html' as  wtf %}
 {% for pitch in pitches_list %}
-{%block styles%}
-{{super()}}
-<link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
 
-{% endblock %}
 
 <div class="card">
     <div class="card-header">
@@ -22,16 +18,5 @@
 
 
 {% endfor %}
-<style>
-    *{
-font-family: 'Supermercado One', cursive;
-  border: 1 px solid red;
 
-  
-   /* background-image: url("./static/images/nature3.jpeg");
-   background-position: center; 
-   background-size: cover;
-   background-repeat: no-repeat; */
-} 
-</style>
 {% endmacro %}
