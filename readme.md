@@ -8,7 +8,7 @@ An application that allows users to submit their one minute pitches and other us
 
 # Setup
 In Terminal:
-git clone https://github.com/debbyne/newsapp.git
+git clone https://github.com/debbyne/pitches.git/
  cd blog
  code .
  
