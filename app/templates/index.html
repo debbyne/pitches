@@ -4,26 +4,36 @@
 
 {%block styles%}
 {{super()}}
-
 <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <body>
-    <div class="overlay">
-   <div class="pickup">
-    <h4>Pick Up Lines</h4>
-    {{macro.displaypitches(pick_up_lines)}}
-   </div>
-    <div class="interview">
-        <h4>Interview Pitches</h4>
-        {{macro.displaypitches(interview_pitch)}}
-    </div>
-   <div class="product_p">
-    <h4>Product Pitches</h4>
-    {{macro.displaypitches(product_pitch)}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                
+                <div class="overlay">
+                    <div class="card">
 
-   </div>
-</div>
+                    </div>
+
+                    <div class="pickup">
+                    <h4>Pick Up Lines</h4>
+                    {{macro.displaypitches(pick_up_lines)}}
+                    </div>
+                   <div class="interview">
+                        <h4>Interview Pitches</h4>
+                        {{macro.displaypitches(interview_pitch)}}
+                     </div>
+                    <div class="product_p">
+                     <h4>Product Pitches</h4>
+                     {{macro.displaypitches(product_pitch)}}
+                 
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
  </body>
   <style>
       *{
