@@ -19,7 +19,7 @@ start.sh
 
 
  In start.sh you have to add :
- export MAIL_USERNAME=<Your email>
+ export MAIL_USERNAME= < Your email>
 export MAIL_PASSWORD= < Email password>
 python3.8 manage.py server
 
