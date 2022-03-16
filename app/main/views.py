@@ -1,6 +1,6 @@
 
 from unicodedata import category
-from flask import render_template,redirect,url_for,abort
+from flask import render_template,redirect,url_for,abort, request
 
 from app.main.forms import CommentForm, PitchForm,UpdateProfile
 from . import main
@@ -83,3 +83,14 @@ def allpitches():
     return render_template('allpitches.html' , pitches = pitches , CommentForm = form)
 
 
+@main.route('/like/<int:id>/<action>', methods = ['GET', 'POST'])
+@login_required
+def like_action(id, action):
+    pitch = Pitch.query.filter_by(id=id).first_or_404()
+    if action == 'like':
+        current_user.like_pitch(pitch)
+        db.session.commit()
+    if action == 'unlike':
+        current_user.unlike_pitch(pitch)
+        db.session.commit()
+    return redirect(request.referrer)
